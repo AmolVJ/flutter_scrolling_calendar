@@ -10,7 +10,7 @@ enum ScreenSizes {
 /// Gets the screen size category of the screen.
 ScreenSizes screenSize(BuildContext context) {
   final double width = MediaQuery.of(context).size.width;
-  if (width < 400.0) {
+  if (width < 420.0) {
     return ScreenSizes.small;
   } else {
     return ScreenSizes.medium;
@@ -34,8 +34,7 @@ double getMonthViewHeight(BuildContext context) {
 /// Some years will have extra vertical space equal to the size of a day number.
 double getYearViewHeight(BuildContext context) {
   const double topPadding = 16.0;
-  final double titleHeight =
-      screenSize(context) == ScreenSizes.small ? 26.0 : 30.0;
+  const double titleHeight = 30.0;
   const double dividerHeight = 16.0;
 
   return topPadding +
