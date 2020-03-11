@@ -10,7 +10,7 @@ enum ScreenSizes {
 /// Gets the screen size category of the screen.
 ScreenSizes screenSize(BuildContext context) {
   final double width = MediaQuery.of(context).size.width;
-  if (width < 420.0) {
+  if (width < 400.0) {
     return ScreenSizes.small;
   } else {
     return ScreenSizes.medium;
@@ -19,7 +19,7 @@ ScreenSizes screenSize(BuildContext context) {
 
 /// Gets the size of the day number widget.
 double getDayNumberSize(BuildContext context) {
-  return screenSize(context) == ScreenSizes.small ? 12.0 : 16.0;
+  return 14.0;
 }
 
 /// Gets the vertical space that one month view takes up.
@@ -33,8 +33,9 @@ double getMonthViewHeight(BuildContext context) {
 /// Gets the vertical space that one year view takes up.
 /// Some years will have extra vertical space equal to the size of a day number.
 double getYearViewHeight(BuildContext context) {
-  const double topPadding = 40.0;
-  const double titleHeight = 30.0;
+  const double topPadding = 50.0;
+    final double titleHeight =
+      screenSize(context) == ScreenSizes.small ? 26.0 : 30.0;
   const double dividerHeight = 16.0;
 
   return topPadding +

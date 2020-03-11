@@ -83,9 +83,12 @@ class MonthView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           MonthTitle(
-            month: month,
-            monthNames: monthNames,
-          ),
+              month: month,
+              monthNames: monthNames,
+              isCurrentMonth:
+                  DateTime.now().month == month && DateTime.now().year == year
+                      ? true
+                      : false),
           Container(
             margin: const EdgeInsets.only(top: 8.0),
             child: buildMonthDays(context),

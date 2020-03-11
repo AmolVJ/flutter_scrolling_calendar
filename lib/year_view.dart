@@ -81,9 +81,6 @@ class YearView extends StatelessWidget {
               right: horizontalMargin,
               top: 8.0,
             ),
-            child: Divider(
-              color: Colors.black26,
-            ),
           ),
           Container(
             margin: EdgeInsets.symmetric(
